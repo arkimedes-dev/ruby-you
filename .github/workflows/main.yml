@@ -36,5 +36,5 @@ jobs:
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: arkimedes-dev/you-ruby
+          slug: arkimedes-dev/ruby-you
           file: coverage/coverage.xml

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    you-ruby (0.1.0)
+    ruby-you (0.1.0)
       faraday (~> 2.0)
       faraday-retry (~> 2)
 
@@ -141,7 +141,7 @@ DEPENDENCIES
   standard (~> 1.36)
   timecop
   webmock (~> 3.17)
-  you-ruby!
+  ruby-you!
 
 BUNDLED WITH
    2.5.16

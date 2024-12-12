@@ -59,7 +59,9 @@ end
 ```rb
 require 'you'
 
-client = You.client(api_key: "YOUR_API_KEY")
+client = You::Client.new(api_key: "YOUR_API_KEY")
+# or you can simply set the YOU_API_KEY on your envs and do:
+default_client = You.client
 
 # Smart API
 response = client.smart(query: "What is the capital of France?", instructions: "Respond in bullet points.")

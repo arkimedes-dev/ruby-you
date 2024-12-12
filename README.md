@@ -1,5 +1,10 @@
 # ruby-you
 
+|  Tests |  Coverage  |
+|:-:|:-:|
+| [![Tests](https://github.com/arkimedes-dev/ruby-you/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/arkimedes-dev/ruby-you/actions/workflows/main.yml)  |  [![Codecov Coverage](https://codecov.io/github/arkimedes-dev/ruby-you/graph/badge.svg?token=SKTT14JJGV)](https://codecov.io/github/arkimedes-dev/ruby-you) |
+
+
 A Ruby client for interacting with the You.com API, including the Smart, Research, Search, and News endpoints. This gem provides a simple and consistent interface, along with configurable retry logic, rate-limit handling, debugging options, and comprehensive error handling.
 
 ## Features

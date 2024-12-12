@@ -15,7 +15,10 @@ RSpec.describe You::Client do
   describe "initialization" do
     context "when api_key is not provided" do
       it "raises an error" do
+        # Temporarily unset the YOU_API_KEY environment variable
+        original_api_key = ENV.delete("YOU_API_KEY")
         expect { described_class.new(api_key: nil) }.to raise_error(You::Error, /No API key provided/)
+        ENV["YOU_API_KEY"] = original_api_key # Restore the environment variable
       end
     end
 
@@ -138,7 +141,8 @@ RSpec.describe You::Client do
       [500, You::InternalServerError, "Internal Server Error"],
       [502, You::BadGatewayError, "Bad Gateway"],
       [503, You::ServiceUnavailableError, "Service Unavailable"],
-      [504, You::GatewayTimeoutError, "Gateway Timeout"]
+      [504, You::GatewayTimeoutError, "Gateway Timeout"],
+      [506, You::Error, "Request failed with status 506: #{{error: "test"}.to_json}"]
     ].each do |status, error_class, message|
       it "raises #{error_class} on HTTP #{status}" do
         stub_request(:post, "https://chat-api.you.com/smart").to_return(status: status, body: {error: "test"}.to_json)

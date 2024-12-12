@@ -59,36 +59,10 @@ module You
           interval_randomness: 0.5,
           interval: initial_wait_time,
           backoff_factor: 2
-        } do |retry_opts|
-          # If you'd like, you can customize conditions here, e.g.,
-          # using the Retry-After header for 429 responses:
-          retry_opts.retry_if = lambda do |env, _|
-            env.status == 429
-          end
-
-          retry_opts.calculate_wait = lambda do |env, _|
-            # Check for 'Retry-After' header:
-            if (retry_after = env.response_headers["Retry-After"])
-              retry_after.to_i
-            else
-              nil # fall back to default backoff logic
-            end
-          end
-        end
+        }
 
         faraday.adapter Faraday.default_adapter
         faraday.headers["X-API-Key"] = @api_key
-      end
-    end
-
-    def get_with_retries(url, params = {})
-      attempt_with_retries do
-      end
-    end
-
-    def post_with_retries(url, payload)
-      attempt_with_retries do
-        post(url, payload)
       end
     end
 

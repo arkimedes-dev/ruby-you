@@ -10,7 +10,7 @@ group :development, :test do
   gem "pry-byebug", "~> 3.10", require: true
   gem "pry-rescue", "~> 1.5", require: true
   gem "pry-stack_explorer", "~> 0.6.1", require: true
-  gem "dotenv"
+  gem "dotenv", require: "dotenv/load"
   gem "standard", "~> 1.36"
   gem "timecop"
 end

@@ -13,7 +13,10 @@ require "webmock/rspec"
 require "pry"
 require "you"
 require "dotenv"
+
+# Load environment variables from .env.test
 Dotenv.load(".env.test")
+
 Bundler.require(:default, :development, :test)
 
 WebMock.disable_net_connect!(allow_localhost: true)

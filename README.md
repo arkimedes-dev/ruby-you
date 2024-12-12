@@ -167,4 +167,4 @@ The test suite covers:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.txt file for details.
+This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/arkimedes-dev/ruby-you/blob/main/LICENSE.txt) file for details.

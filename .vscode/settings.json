@@ -1,0 +1,11 @@
+{
+  "rubyLsp.formatter": "none", // Use standard rbfmt instead
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
+  },
+  "standardRuby.autofix": true
+}

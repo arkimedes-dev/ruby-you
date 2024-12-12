@@ -1,0 +1,40 @@
+name: Ruby
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Ruby ${{ matrix.ruby }}
+    strategy:
+      matrix:
+        ruby:
+          - "3.3.5"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Ruby version specified in `.ruby-version`
+        uses: eregon/use-ruby-action@master # this will use by default the .ruby-version file in your repository
+
+      - name: Bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install
+
+      - name: Run the default task
+        env:
+          COVERAGE_DIR: coverage
+        run: bundle exec rake
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: arkimedes-dev/you-ruby
+          file: coverage/coverage.xml

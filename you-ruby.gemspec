@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "ruby-you"
-  spec.version = "0.1.0"
+  spec.version = "0.1.1"
   spec.authors = ["Martin Mochetti"]
   spec.summary = "A Ruby client for the You.com API."
   spec.description = "Provides a simple Ruby interface for interacting with the You.com Smart, Research, Search, and News endpoints."

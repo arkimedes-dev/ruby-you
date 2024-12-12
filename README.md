@@ -23,7 +23,7 @@ A Ruby client for interacting with the You.com API, including the Smart, Researc
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-you', path: 'path/to/ruby-you'
+gem 'ruby-you'
 ```
 
 Then execute
@@ -36,7 +36,7 @@ Or install it yourself as:
 
 ```bash
 gem build ruby-you.gemspec
-gem install ruby-you-0.1.0.gem
+gem install ruby-you-0.1.1.gem
 ```
 
 ## Configuration

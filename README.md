@@ -1,4 +1,4 @@
-# you-ruby
+# ruby-you
 
 A Ruby client for interacting with the You.com API, including the Smart, Research, Search, and News endpoints. This gem provides a simple and consistent interface, along with configurable retry logic, rate-limit handling, debugging options, and comprehensive error handling.
 
@@ -18,7 +18,7 @@ A Ruby client for interacting with the You.com API, including the Smart, Researc
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'you-ruby', path: 'path/to/you-ruby'
+gem 'ruby-you', path: 'path/to/ruby-you'
 ```
 
 Then execute
@@ -30,8 +30,8 @@ bundle install
 Or install it yourself as:
 
 ```bash
-gem build you-ruby.gemspec
-gem install you-ruby-0.1.0.gem
+gem build ruby-you.gemspec
+gem install ruby-you-0.1.0.gem
 ```
 
 ## Configuration

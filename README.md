@@ -163,6 +163,7 @@ The test suite covers:
 - Commit your changes (git commit -m 'Add new feature')
 - Push to the branch (git push origin feature/my-feature)
 - Create a new Pull Request
+- Release the gem: `bundle exec rake release`
 
 ## License
 

@@ -39,6 +39,10 @@ module You
       get("#{SEARCH_API_BASE_URL}/news", {query: query}.merge(params))
     end
 
+    def rag(query:, **params)
+      get("#{SEARCH_API_BASE_URL}/rag", {query: query}.merge(params))
+    end
+
     private
 
     def connection(base_url)

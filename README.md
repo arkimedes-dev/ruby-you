@@ -113,6 +113,10 @@ puts news_result["news"]["results"]
 - spellcheck (Boolean, optional)
 - recency (String, optional: day, week, month, year)
 
+### WEB LLM (GET /rag)
+
+- query (String, required)
+
 ### Error Handling
 
 The client raises custom exceptions for non-200 responses:

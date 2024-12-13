@@ -127,6 +127,23 @@ RSpec.describe You::Client do
     end
   end
 
+  # RAG endpoint tests
+  describe "#rag" do
+    let(:request_method) { :get }
+    let(:endpoint_url) { "https://api.ydc-index.io/rag?query=test" }
+
+    it_behaves_like "a successful request", :rag, "https://api.ydc-index.io/rag?query=test"
+
+    it "sends correct parameters via query string" do
+      stub = stub_request(:get, "https://api.ydc-index.io/rag")
+        .with(query: {"query" => "test", "additional_param" => "value"})
+        .to_return(status: 200, body: {result: "ok"}.to_json)
+
+      client.rag(query: "test", additional_param: "value")
+      expect(stub).to have_been_requested
+    end
+  end
+
   # Error handling tests
   describe "error handling" do
     let(:client) { described_class.new(api_key: api_key, max_retries: 1, initial_wait_time: 0.01) }
